@@ -1,6 +1,6 @@
 Consultas a realizar:
 1.  Obtén el identificador aquellas muestras que estén relacionadas con el gen cuyo id es 21
-2.  De la paciente cuyo id es 101, devolver una tupla (tabla) que diga el Id de cada una de sus muestras, su descripción, fecha de recolección y el nivel de expresión para el gen 1
+2.  De la paciente cuyo id es 101, devolver una tupla (tabla) que diga el Id de cada una de sus muestras, su descripción, fecha de recolección y el nivel de expresión para el gen 1.
 3.  Encontrar las muestras recolectadas el 2 de junio del 2024 junto con la descripción del paciente y la descripción de la muestra.
 4.  Encontrar los pacientes que tienen muestras con niveles de expresión mayores a un valor específico para un gen en particular.
 5.   Listar los genes que tienen un nivel de expresión promedio mayor a 1 para todas las muestras.
