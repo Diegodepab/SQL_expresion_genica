@@ -1,0 +1,5 @@
+#Obtén el identificador aquellas muestras que estén relacionadas con el gen cuyo id es 21
+SELECT Muestras.*
+FROM ExpresionGenica
+JOIN Muestras ON ExpresionGenica.Muestras_id_muestras = Muestras.id_muestras
+WHERE ExpresionGenica.Genes_id_gen = 21;
