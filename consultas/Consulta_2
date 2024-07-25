@@ -1,0 +1,14 @@
+#Consulta_2
+#De la paciente cuyo id es 101, devolver una tupla (tabla) que diga el Id de cada una de sus muestras, su descripción, fecha de recolección y el nivel de expresión para el gen 1.
+SELECT 
+    Muestras.id_muestras,
+    Muestras.descripcion,
+    Muestras.fecha_recoleccion,
+    ExpresionGenica.nivel_expresion
+FROM 
+    Muestras
+JOIN 
+    ExpresionGenica ON Muestras.id_muestras = ExpresionGenica.Muestras_id_muestras
+WHERE 
+    Muestras.Pacientes_id_paciente = 101 
+    AND ExpresionGenica.Genes_id_gen = 1;
