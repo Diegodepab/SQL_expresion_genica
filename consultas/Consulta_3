@@ -1,0 +1,14 @@
+#Consulta_3
+#Encontrar las muestras recolectadas el 2 de junio del 2024 junto con la descripción del paciente y la descripción de la muestra.
+SELECT
+    M.id_muestras,
+    P.nombre AS nombre_paciente,
+    P.apellidos AS apellidos_paciente,
+    M.descripcion AS descripcion_muestra,
+    M.fecha_recoleccion
+FROM
+    Muestras M
+INNER JOIN
+    Pacientes P ON M.Pacientes_id_paciente = P.id_paciente
+WHERE
+    M.fecha_recoleccion = '2024-06-02';
