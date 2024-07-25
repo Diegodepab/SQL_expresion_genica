@@ -1,0 +1,14 @@
+#Consulta_7
+#Obtener el id, descripción y cromosoma de los genes de interés cuya expresión sea mayor a 1 para la muestra 101.
+
+SELECT 
+    GenesInteres.Genes_id_gen,
+    GenesInteres.description,
+    GenesInteres.cromosoma
+FROM 
+    GenesInteres
+JOIN 
+    ExpresionGenica ON GenesInteres.Genes_id_gen = ExpresionGenica.Genes_id_gen
+WHERE 
+    ExpresionGenica.nivel_expresion > 1.0
+    AND ExpresionGenica.Muestras_id_muestras = 101; 
