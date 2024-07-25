@@ -1,0 +1,7 @@
+#Consulta_4
+#Encontrar los pacientes que tienen muestras con niveles de expresión mayores a 1 para un gen determinado, probando de ejemplo el gen uno y mostrando por pantalla los datos del paciente y la muestra junto a su nivel de expresión.
+
+SELECT Pacientes.id_paciente, Pacientes.nombre, Pacientes.apellidos, Muestras.id_muestras, ExpresionGenica.nivel_expresion 
+FROM Pacientes 
+JOIN Muestras ON Pacientes.id_paciente = Muestras.Pacientes_id_paciente JOIN ExpresionGenica ON Muestras.id_muestras = ExpresionGenica.Muestras_id_muestras 
+WHERE ExpresionGenica.Genes_id_gen = 1 AND ExpresionGenica.nivel_expresion > 1.0;
