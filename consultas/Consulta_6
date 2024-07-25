@@ -1,0 +1,23 @@
+Consulta_6
+#Obtener la muestra más reciente de cada paciente junto con el nivel de expresión de un gen con identificador 1.
+SELECT 
+    Pacientes.id_paciente,
+    Pacientes.nombre,
+    Pacientes.apellidos,
+    Muestras.id_muestras,
+    Muestras.descripcion,
+    Muestras.fecha_recoleccion,
+    ExpresionGenica.nivel_expresion
+FROM 
+    Pacientes
+JOIN 
+    Muestras ON Pacientes.id_paciente = Muestras.Pacientes_id_paciente
+JOIN 
+    ExpresionGenica ON Muestras.id_muestras = ExpresionGenica.Muestras_id_muestras
+WHERE 
+    ExpresionGenica.Genes_id_gen = 1
+    AND Muestras.fecha_recoleccion = (
+        SELECT MAX(m.fecha_recoleccion)
+        FROM Muestras m
+        WHERE m.Pacientes_id_paciente = Pacientes.id_paciente
+    );
