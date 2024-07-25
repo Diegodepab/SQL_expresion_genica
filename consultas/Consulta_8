@@ -1,0 +1,15 @@
+#Consulta_8
+#Listar todos los genes con su símbolo y el número de muestras en las que tienen algún nivel de expresión mayor a 1.0.
+
+SELECT 
+    Genes.id_gen,
+    Genes.gen_symbol,
+    COUNT(DISTINCT ExpresionGenica.Muestras_id_muestras) AS numero_muestras
+FROM 
+    Genes
+JOIN 
+    ExpresionGenica ON Genes.id_gen = ExpresionGenica.Genes_id_gen
+WHERE 
+    ExpresionGenica.nivel_expresion > 1.0
+GROUP BY 
+    Genes.id_gen, Genes.gen_symbol;
