@@ -1,0 +1,13 @@
+#Consulta_5
+#Listar los genes que tienen un nivel de expresión promedio mayor a 1 para todas las muestras, junto a su  promedio de expresión en todas las muestras que se tiene registro.
+SELECT 
+    Genes.gen_symbol,
+    AVG(ExpresionGenica.nivel_expresion) AS promedio_nivel_expresion
+FROM 
+    ExpresionGenica
+JOIN 
+    Genes ON ExpresionGenica.Genes_id_gen = Genes.id_gen
+GROUP BY 
+    Genes.gen_symbol
+HAVING 
+    AVG(ExpresionGenica.nivel_expresion) > 1.0;
